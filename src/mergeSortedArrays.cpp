@@ -1,10 +1,12 @@
 /*
 OVERVIEW: You are given 2 bank statements that are ordered by date -
 Write a function that produces a single merged statement ordered by dates.
-E.g.: Input: A[3] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005",
+E.g.: Input: A[3] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005",
+
 "Third" } };
 B[2] = { { 10, "09-10-2003", "First" }, { 220, "18-01-2010", "Sixth" } };
-Output: { { 10, "09-10-2003", "First" }, { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" },  30,
+Output: { { 10, "09-10-2003", "First" }, { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" },  30,
+
 "03-03-2005", "Third" }, { 220, "18-01-2010", "Sixth" } }
 
 INPUTS: Two bank statements (array of transactions).
@@ -17,6 +19,7 @@ NOTES:
 */
 
 #include <iostream>
+#include <stdlib.h>
 int check_dates_equal(char *date1, char *date2);
 struct transaction {
 	int amount;
@@ -28,10 +31,11 @@ struct transaction * mergeSortedArrays(struct transaction *A, int ALen, struct t
 	if ((A) && (B) && ALen>0 && BLen>0)
 	{
 		struct transaction *result_array;
-		result_array = (struct transaction*)malloc(sizeof(struct transaction));
+		result_array = (struct transaction*)malloc(sizeof(struct transaction)*10);
 		int new_arr_index = 0, i = 0, j = 0, temp = 0;
 		while (i < ALen && j < BLen)
 		{
+			printf("hi");
 			temp = check_dates_equal(A[i].date, B[j].date);
 			if (temp == -1)
 			{

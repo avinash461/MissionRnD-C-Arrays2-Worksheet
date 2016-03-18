@@ -40,5 +40,5 @@ int findSingleOccurenceNumber(int *A, int len) {
 				return j;
 		}
 	}
-	return NULL;
+	return -1;
 }
