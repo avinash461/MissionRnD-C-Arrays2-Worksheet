@@ -35,7 +35,6 @@ struct transaction * mergeSortedArrays(struct transaction *A, int ALen, struct t
 		int new_arr_index = 0, i = 0, j = 0, temp = 0;
 		while (i < ALen && j < BLen)
 		{
-			printf("hi");
 			temp = check_dates_equal(A[i].date, B[j].date);
 			if (temp == -1)
 			{

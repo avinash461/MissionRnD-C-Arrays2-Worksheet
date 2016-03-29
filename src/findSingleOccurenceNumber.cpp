@@ -19,13 +19,13 @@ int findSingleOccurenceNumber(int *A, int len) {
 	if ((A) && len > 0)
 	{
 		int max_value = 0;
-		char *new_array;
+		int *new_array;
 		for (int i = 0; i < len; i++)
 		{
 			if (A[i]>max_value)
 				max_value = A[i];
 		}
-		new_array = (char*)malloc(sizeof(char)*max_value);
+		new_array = (int*)malloc(sizeof(int)*max_value);
 		for (int i = 0; i <= max_value; i++)
 		{
 			new_array[i] = 0;

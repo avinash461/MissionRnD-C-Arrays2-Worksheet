@@ -36,7 +36,6 @@ struct transaction * sortedArraysCommonElements(struct transaction *A, int ALen,
 		int new_arr_index = 0, i = 0, j = 0, temp = 0,common_index=0;
 		while (i < ALen && j < BLen)
 		{
-			printf("hi");
 			temp = valid_dates_equal(A[i].date, B[j].date);
 			if (temp == -1)
 			{
